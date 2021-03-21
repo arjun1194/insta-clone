@@ -17,7 +17,8 @@ class MainViewModel @Inject constructor(
     private val userRepository: UserRepository
 ) : ViewModel() {
 
-    val users = MutableLiveData<DataResponse<List<User>>>();
+    val users = MutableLiveData<DataResponse<List<User>>>()
+
 
     fun getUsers() {
         viewModelScope.launch {
@@ -26,4 +27,5 @@ class MainViewModel @Inject constructor(
             }.launchIn(viewModelScope)
         }
     }
+
 }
